@@ -1,10 +1,10 @@
 import requests
 
-base_url = "https://api.mouser.com/api/v2"
+base_url = "https://api.mouser.com/"
 
 api_key = "2c18ba1d-7b17-4d2e-9e0f-34e05a5e674c"
 
-search_endpoint = "/search/keywordandmanufacturer"
+search_endpoint = "api/v2/search/partnumberandmanufacturer?apiKey=2c18ba1d-7b17-4d2e-9e0f-34e05a5e674c"
 
 url = base_url + search_endpoint
 
