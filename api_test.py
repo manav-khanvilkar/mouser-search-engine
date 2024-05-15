@@ -21,13 +21,13 @@ def search_parts_by_keyword_and_manufacturer(manufacturer_name, keyword, records
 
     headers = {
         "Content-Type": "application/json",
-        "Accept": ""
+        "Accept": "text/xml"
     }
-    headers["Accept"] = "tex/" + return_type
+    headers["Accept"] = "text/" + return_type
     response = requests.post(url, json=payload, headers=headers)
 
     if response.status_code == 200:
-        data = response.json()
+        data = response.content
         return data
     else:
         return {"Error": response.status_code}
@@ -46,7 +46,7 @@ def search_parts_by_part_number_and_manufacturer(manufacturer_name, mouser_part_
 
     headers = {
         "Content-Type": "application/json",
-        "Accept": ""
+        "Accept": "text/xml"
     }
     headers["Accept"] = "text/" + return_type
     response = requests.post(url, json=payload, headers=headers)
